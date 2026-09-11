@@ -49,14 +49,14 @@ Sidebar y encabezado; saludo personalizado; botón “Nueva tarea”; fila adapt
 
 ### Lista de tareas
 
-Dentro de `AppLayout`: encabezado con título, filtros futuros y acción para crear. El contenido será tabla o tarjetas adaptables con estados loading, empty y error. Johan implementará los datos y acciones.
+Dentro de `AppLayout`: encabezado con título, búsqueda, filtros y acción para crear. El contenido usa tarjetas adaptables con estados loading, empty, error y success conectados a datos reales.
 
 ### Nueva tarea
 
-Dentro de `AppLayout`: encabezado de contexto y formulario en una superficie centrada, con acciones Guardar y Cancelar. No se define todavía lógica CRUD.
+Dentro de `AppLayout`: encabezado de contexto y formulario reutilizable en una superficie centrada, con validaciones y acción para guardar mediante la API.
 
 ### Editar tarea
 
-Comparte el formulario de nueva tarea, precargado por el futuro servicio. Debe distinguir claramente el modo edición y conservar navegación de regreso.
+Comparte el formulario de nueva tarea, precargado desde la API. Distingue claramente el modo edición y conserva la navegación de regreso.
 
 Este documento es la referencia del prototipo y guía directamente la implementación React actual y sus futuras extensiones.
