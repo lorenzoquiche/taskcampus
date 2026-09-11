@@ -1,23 +1,8 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import useAuth from "../auth/useAuth.js";
+import { Construction } from "lucide-react";
+import { useLocation } from "react-router-dom";
+import PageHeader from "../components/PageHeader.jsx";
 
 export default function TemporaryProtectedPage() {
-  const { user, logout } = useAuth();
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout();
-    navigate("/login", { replace: true });
-  };
-
-  return (
-    <main className="simple-page">
-      <h1>Área protegida temporal</h1>
-      <p>Ruta actual: {location.pathname}</p>
-      <p>Sesión activa para {user.name}.</p>
-      <nav><Link to="/dashboard">Dashboard</Link>{" · "}<Link to="/tasks">Tareas</Link>{" · "}<Link to="/tasks/new">Nueva tarea</Link></nav>
-      <button type="button" onClick={handleLogout}>Cerrar sesión</button>
-    </main>
-  );
+  const { pathname } = useLocation();
+  return <><PageHeader eyebrow="Módulo en preparación" title="Gestión de tareas" description="Esta vista queda preparada dentro del layout para la integración del CRUD." /><div className="temporary-state"><Construction aria-hidden="true" /><h2>Próximamente</h2><p>Ruta activa: <code>{pathname}</code></p></div></>;
 }
