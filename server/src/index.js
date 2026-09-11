@@ -2,6 +2,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import authRoutes from "./routes/authRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
 import {
   apiNotFound,
   errorHandler,
@@ -25,6 +26,7 @@ app.get("/api/health", (_request, response) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
 app.use("/api", apiNotFound);
 app.use(errorHandler);
 
